@@ -1,0 +1,8 @@
+plugins:
+  - name: contact
+    repo: https://github.com/kunnoh/wp-plugin-contact.git
+    ref: v1.2.0
+
+  # - name: payments
+  #   repo: https://github.com/kunnoh/wp-plugin-payments.git
+  #   ref: main
