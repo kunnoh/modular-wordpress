@@ -2,9 +2,9 @@ FROM wordpress:php8.4-fpm-alpine AS base
 
 WORKDIR /var/www/html/wp-content/plugins
 
-COPY plugins.manifest.yaml /tmp/plugins.yaml && \
-docker/fetch-plugins.sh /usr/local/bin/fetch-plugins.sh && \
-wp-config.php ../../
+COPY plugins.manifest.yaml /tmp/plugins.yaml
+COPY docker/fetch-plugins.sh /usr/local/bin/fetch-plugins.sh
+COPY wp-config.php ../../
 
 RUN chmod +x /usr/local/bin/fetch-plugins.sh \
  && /usr/local/bin/fetch-plugins.sh
