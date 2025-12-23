@@ -1,4 +1,4 @@
-FROM wordpress:php8.4-fpm-alpine
+FROM wordpress:php8.4-fpm-alpine AS base
 
 WORKDIR /var/www/html/wp-content/plugins
 
