@@ -64,17 +64,19 @@ No plugins are installed at runtime. Every deployment is reproducible, auditable
 ## Plugin Management Model
 Plugins are defined declaratively in a single manifest file.
 
-plugins.manifest.yaml
+**[plugins.manifest.yaml](plugins.manifest.yaml)**.  
 ```yml
 plugins:
-  - name: seo
-    repo: https://github.com/yourname/wp-plugin-seo.git
+  - name: contact
+    repo: https://github.com/kunnoh/wp-plugin-contact-us.git
     ref: v1.2.0
 
   - name: payments
-    repo: https://github.com/yourname/wp-plugin-payments.git
+    repo: https://github.com/kunnoh/wp-plugin-payments.git
     ref: main
 ```
+
+You can add your model using github URL.
 
 ### Why this approach?
 - Version pinning → reproducible builds.  
@@ -143,11 +145,13 @@ The container filesystem is immutable. Only **/wp-content/uploads** should be pe
 
 ## Configuration
 ### Environment Variables
-|Variable	|Description  
-WORDPRESS_DB_HOST	Database host  
-WORDPRESS_DB_NAME	Database name  
-WORDPRESS_DB_USER	Database user  
-WORDPRESS_DB_PASSWORD	Database password  
+| Variable               | Description            |
+|------------------------|------------------------|
+| WORDPRESS_DB_HOST      | Database host          |
+| WORDPRESS_DB_NAME      | Database name          |
+| WORDPRESS_DB_USER      | Database user          |
+| WORDPRESS_DB_PASSWORD  | Database password      |
+
 
 ### Security Considerations
 - Plugins sourced only from trusted Git repositories
@@ -165,7 +169,7 @@ Traditional WordPress deployments suffer from:
 This project applies modern DevOps and platform engineering practices to WordPress without sacrificing flexibility.  
 
 ## Maintainer
-### Dereba (DevOps Engineer)
+### Alvin (DevOps Engineer)
 Focus areas:
 - Linux systems
 - CI/CD pipelines

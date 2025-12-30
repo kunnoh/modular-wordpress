@@ -13,7 +13,8 @@ jobs:
 
       - name: Login to registry
         run: echo "${{ secrets.GHCR_PAT }}" | docker login ghcr.io -u USERNAME --password-stdin
-
+      # - name: Log in to GHCR
+      #   run: echo "${{ secrets.GHCR_PAT }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
       - name: Build image
         run: |
           docker build -t ghcr.io/kunnoh/wp:${{ github.sha }} .
